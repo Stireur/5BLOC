@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.7.4;
 
 import "./MonopolyProperty.sol";
 import "./MonopolyToken.sol";
