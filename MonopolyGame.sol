@@ -3,7 +3,7 @@ pragma solidity ^0.8.20;
 
 import "./MonopolyProperty.sol";
 import "./MonopolyToken.sol";
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
 contract MonopolyGame is ReentrancyGuard {
     MonopolyProperty public propertyContract;
