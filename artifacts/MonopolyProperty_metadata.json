@@ -299,6 +299,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "gameContract",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -502,6 +515,19 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "_gameContract",
+						"type": "address"
+					}
+				],
+				"name": "setGameContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "bytes4",
 						"name": "interfaceId",
 						"type": "bytes4"
@@ -698,12 +724,6 @@
 				"isApprovedForAll(address,address)": {
 					"details": "See {IERC721-isApprovedForAll}."
 				},
-				"mintProperty(address,string)": {
-					"params": {
-						"to": "Adresse du propriétaire initial",
-						"tokenURI": "URI des métadonnées stockées sur IPFS"
-					}
-				},
 				"name()": {
 					"details": "See {IERC721Metadata-name}."
 				},
@@ -745,14 +765,7 @@
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {
-				"mintProperty(address,string)": {
-					"notice": "Mint une nouvelle propriété"
-				},
-				"ownerOfProperty(uint256)": {
-					"notice": "Vérifie si un joueur possède une propriété spécifique"
-				}
-			},
+			"methods": {},
 			"version": 1
 		}
 	},
@@ -925,11 +938,11 @@
 			]
 		},
 		"MonopolyProperty.sol": {
-			"keccak256": "0x0598dab0af7c7f6504ba29b303caceba29716607ae33cb2c00c3a5e768cd70f0",
+			"keccak256": "0xe4364a5d18b94991f6504175386b96ca414e15c958871b82a15cb20a1bd86408",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0e7887c8d89f16142cf277378bdc93061abdaf91f76567b752cc4734c350d3eb",
-				"dweb:/ipfs/QmQYRHJodeTna88eenLpn79Wc4C5fXXa7hsGUMYt7Fzrk9"
+				"bzz-raw://f196d9563fc6d895381b3e1e266600395dc73c916d02dc064016f316949faeca",
+				"dweb:/ipfs/QmbpufFWSeYu2aQLfU7kVmaeufHC8n8VQQe6Xp8kBQCaSx"
 			]
 		}
 	},
