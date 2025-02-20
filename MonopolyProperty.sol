@@ -6,13 +6,20 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract MonopolyProperty is ERC721URIStorage, Ownable {
     uint256 private _tokenIdCounter;
+    address public gameContract;
 
     constructor() ERC721("MonopolyProperty", "MNP") Ownable(msg.sender) {}
 
-    /// @notice Mint une nouvelle propriété
-    /// @param to Adresse du propriétaire initial
-    /// @param tokenURI URI des métadonnées stockées sur IPFS
-    function mintProperty(address to, string memory tokenURI) external onlyOwner {
+    modifier onlyGameContract() {
+        require(msg.sender == gameContract, "Only game contract can call this");
+        _;
+    }
+
+    function setGameContract(address _gameContract) external onlyOwner {
+        gameContract = _gameContract;
+    }
+
+    function mintProperty(address to, string memory tokenURI) external onlyGameContract {
         uint256 tokenId = _tokenIdCounter;
         _tokenIdCounter++;
 
@@ -20,7 +27,6 @@ contract MonopolyProperty is ERC721URIStorage, Ownable {
         _setTokenURI(tokenId, tokenURI);
     }
 
-    /// @notice Vérifie si un joueur possède une propriété spécifique
     function ownerOfProperty(uint256 tokenId) external view returns (address) {
         return ownerOf(tokenId);
     }
